@@ -1,26 +1,19 @@
-let deleteBtns = document.querySelectorAll('.delete-btn');
-let doneBtns = document.querySelectorAll('.done-btn');
+const todos = document.querySelector('.collection');
 
-deleteBtns.forEach((deleteBtn) => {
-    deleteBtn.addEventListener('click', (e) => {
+todos.addEventListener('click', (e) => {
+    if (e.target.parentElement.className === 'delete-btn') {
         // prevent link redirect
         e.preventDefault();
         // get todo's wrapping li
-        // const li = e.target.parentElement.parentElement.parentElement.parentElement;
         const li = e.target.closest('li');
         // delete li element
         li.parentElement.removeChild(li);
-    });
-});
-
-doneBtns.forEach((doneBtn) => {
-    doneBtn.addEventListener('click', (e) => {
+    } else if (e.target.parentElement.className === 'done-btn') {
         // prevent link redirect
         e.preventDefault();
         // get todo's wrapping li
-        // const li = e.target.parentElement.parentElement.parentElement.parentElement;
         const li = e.target.closest('li');
-        // mark todo as done (add done class)
+        // delete li element
         li.className += " done";
-    });
+    }
 });
