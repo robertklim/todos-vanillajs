@@ -6,3 +6,18 @@ ul li i {
     text-decoration: line-through;
     background: #aed581 !important;
 }
+
+/* Align unchecked box */
+[type="checkbox"].filled-in:not(:checked)+span:not(.lever):after {
+    margin-top: 3px;
+}
+
+/* Align checked box */
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+    margin-top: 3px;
+}
+
+/* Align check mark */
+[type="checkbox"].filled-in:checked+span:not(.lever):before {
+    margin-top: 4px;
+}
