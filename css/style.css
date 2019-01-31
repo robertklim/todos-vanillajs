@@ -7,6 +7,10 @@ ul li i {
     background: #aed581 !important;
 }
 
+.hide {
+    display: none;
+}
+
 /* Align unchecked box */
 [type="checkbox"].filled-in:not(:checked)+span:not(.lever):after {
     margin-top: 3px;

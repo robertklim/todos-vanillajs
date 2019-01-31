@@ -1,5 +1,20 @@
 const todos = document.querySelector('.collection');
 const addForm = document.getElementById('add-form');
+const searchBar = document.forms['search-form'].querySelector('input');
+
+searchBar.addEventListener('keyup', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const todosAll = todos.getElementsByClassName('collection-item');
+    Array.from(todosAll).forEach((todo) => {
+        const todoText = todo.querySelector('.todo-text').textContent;
+
+        if (todoText.toLowerCase().indexOf(searchTerm) != -1) {
+            todo.classList.remove('hide');
+        } else {
+            todo.classList.add('hide');
+        }
+    });
+});
 
 todos.addEventListener('click', (e) => {
     if (e.target.parentElement.className === 'delete-btn') {
